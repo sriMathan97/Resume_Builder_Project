@@ -432,7 +432,6 @@ function secure(){
 
 // create resume end //
 
-console.log(userResume)
 
 
 
