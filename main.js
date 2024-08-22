@@ -34,6 +34,8 @@ function getRegisterData(){
 // login start //
 function userLogin(){
 
+
+    
     let login_id = document.getElementById("login_id").value;
     let login_pass = document.getElementById("login_pass").value;
 
@@ -45,6 +47,9 @@ function userLogin(){
         }
     };
     if(mail_and_pass == true){
+            // page secure start 
+            localStorage.setItem("isLogged", "true")
+            // page secure end
         window.location = "resume.html"
     };
     if(mail_and_pass == false){
@@ -406,6 +411,24 @@ function viewSingleResume(){
 }
 
 // view the user's created index resume (view single resume) end------12
+
+// Secure Page start 13
+
+function logOut(){
+    localStorage.removeItem("isLogged")
+    window.location = "index.html"
+}
+
+function secure(){
+    let isLogged = localStorage.getItem("isLogged");
+
+    if(!isLogged){
+        window.location = "index.html"
+    }
+}
+
+// Secure Page end 13
+
 
 // create resume end //
 
